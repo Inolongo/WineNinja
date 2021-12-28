@@ -85,18 +85,18 @@ public class GameManager : Singleton<GameManager>
 
         if(target.TargetType != TargetType.Bomb && target.transform.position.y < 10)
         {
-            //GameOverMethod();
+            GameOverMethod();
         }
     }
 
-    // private void GameOverMethod()
-    // {
-    //     StopCoroutine(_spawnRoutine);
-    //     endGameObj.SetActive(true);
-    //     GameEnded?.Invoke();
-    //     endGameScore.text = "Score " + _score;
-    //     _score = 0;
-    // }
+    private void GameOverMethod()
+    {
+        StopCoroutine(_spawnRoutine);
+        endGameObj.SetActive(true);
+        GameEnded?.Invoke();
+        endGameScore.text = "Score " + _score;
+        _score = 0;
+    }
 
     private void RestartGame()
     {
